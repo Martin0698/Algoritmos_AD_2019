@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="MergeSort"/>
+<fullyQualifiedTypeName name="MergeSort.Quicksort"/>
+<fullyQualifiedTypeName name="Quicksort"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.lang.Boolean"/>
+<fullyQualifiedTypeName name="java.lang.EnumConstantNotPresentException"/>
 </qualifiedTypeNameHistroy>

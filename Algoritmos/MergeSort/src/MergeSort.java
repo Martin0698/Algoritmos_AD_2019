@@ -7,7 +7,7 @@ public class MergeSort {
 	}
 	
 	private static void rec_MergeSort(int[] enteros, int min, int max){
-		System.out.println( "Rec_Mergesort "+"min:"+min+ " max:"+ max);
+		//System.out.println( "Rec_Mergesort "+"min:"+min+ " max:"+ max);
 		if(max-min >0) {
 			int divide= (min + max)/2;
 			
@@ -22,7 +22,7 @@ public class MergeSort {
 	}
 	
 	private static void merge(int[] enteros, int min, int max ){
-		System.out.println( "Mergesort "+"min:"+min+ " max:"+ max);
+		//System.out.println( "Mergesort "+"min:"+min+ " max:"+ max);
 		
 		int mitad= ((max +min) /2);
 		int s_enteros= mitad +1;
@@ -31,6 +31,12 @@ public class MergeSort {
 		// Si está ordenado acabo el proceso
 		if(enteros[mitad] <= enteros[s_enteros]){
 			return;
+		}
+		
+		// Cuando el arreglo tenga 16 o menos elementos usara Quicksort
+		if( (max - min) <= 16){
+			
+			Quicksort.quickSort(enteros);
 		}
 		
 		//Si no está ordenado
@@ -82,5 +88,7 @@ public class MergeSort {
 		
 		
 	}
+
+
 
 }

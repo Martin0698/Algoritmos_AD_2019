@@ -1,0 +1,103 @@
+public class Quicksort {
+	
+	public static void quickSort(int[] enteros){
+	
+		rec_QuickSort(enteros, 0, enteros.length-1);
+	}
+
+	
+	private static void rec_QuickSort(int[] enteros, int min, int max) {
+		System.out.println( "QuickSort "+"min:"+min+ " max:"+ max);
+		
+		int rmin=min;
+		int rmax=max;
+		int epiv= enteros[min];
+		enteros[min]=-1;
+		//boolean f1, f2;
+		
+		
+		while (min <= max){
+			
+			if((enteros[max] <= epiv) && (enteros[min] > epiv)){
+				int swap;
+				swap=enteros[max];
+				enteros[max]= enteros[min];
+				enteros[min]= swap;
+				min++;
+				max--;
+			}
+			
+			
+			else if(enteros[max] <= epiv){
+				enteros[min]= enteros[max];
+				enteros[max]= -1;
+				min++;
+				while(min <= max){
+					
+					if(enteros[min] > epiv){
+						enteros[max]= enteros[min];
+						enteros[min]= -1;
+						max--;
+						min++;
+						break;
+					}
+					min++;
+				}
+					
+			}
+			else if(enteros[min] > epiv){
+				enteros[max]= enteros[min];
+				
+				
+				max--;
+				while(min <= max){
+					if(enteros[max] <= epiv){
+						enteros[min]= enteros[max];
+						enteros[min]= -1;
+						min++;
+						max--;
+						break;
+					}
+					max--;
+				}
+			}
+			else if(min == max){
+				enteros[min]= epiv;
+				break;
+			}
+			
+			
+			
+		}
+		ImprimeArreglo(enteros);
+		System.out.println(" ");
+		
+		
+		Particion(enteros, rmin, (rmin+rmax)/2);
+		Particion(enteros, ((rmin+rmax)/2)+1, rmax);
+		
+	}
+	
+	
+	private static void  Particion(int[] enteros, int min, int max) {
+		
+	}
+	
+	private static void ImprimeArreglo(int[] enteros){
+		for(int i=0; i< enteros.length;i++){
+			System.out.print(enteros[i]+",");
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int[] entero= {15,5,20, 1, 8,20,25,30,4,5};
+		
+		ImprimeArreglo(entero);
+		System.out.println(" ");
+		quickSort(entero);
+		
+	}
+
+}
