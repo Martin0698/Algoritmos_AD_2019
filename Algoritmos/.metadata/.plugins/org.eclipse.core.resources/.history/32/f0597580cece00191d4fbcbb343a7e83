@@ -1,0 +1,54 @@
+
+public class MergeSort {
+
+	public static void mergeSort(int[] enteros){
+	
+		rec_MergeSort(enteros, 0, enteros.length-1);
+	}
+	
+	private static void rec_MergeSort(int[] enteros, int min, int max){
+		System.out.println( "Rec_Mergesort "+"min:"+min+ " max:"+ max);
+		if(max-min >0) {
+			int divide= (min + max)/2;
+			
+			rec_MergeSort(enteros, min, divide);
+			rec_MergeSort(enteros, divide+1, max);
+			merge(enteros, min, max);
+			
+		}
+			
+		
+		
+	}
+	
+	private static void merge(int[] enteros, int min, int max ){
+		System.out.println( "Mergesort "+"min:"+min+ " max:"+ max);
+		
+		int mitad= ((max +min) /2);
+		int s_enteros= mitad +1;
+		int valor1, valor2;
+	
+		if()
+		
+	}
+	
+	private static void ImprimeArreglo(int[] enteros){
+		for(int i=0; i< enteros.length;i++){
+			System.out.print(enteros[i]+",");
+		}
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] entero= {15,9,25,8,5,7,1,10,4,30};
+		
+		ImprimeArreglo(entero);
+		System.out.println(" ");
+		mergeSort(entero);
+		System.out.println(" ");
+		ImprimeArreglo(entero);
+		
+		
+		
+	}
+
+}
